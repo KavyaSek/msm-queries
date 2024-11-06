@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get("/movies", { :controller => "overall", :action => "disp_movies" })
 
   get("/directors/youngest", { :controller => "overall", :action => "disp_youngest" })
+  get("/directors/eldest", { :controller => "overall", :action => "disp_oldest" })
 
   get("/directors/:dir_id", { :controller => "overall", :action => "disp_directors_bio" })
   get("/movies/:mov_id", { :controller => "overall", :action => "disp_movies_details" })

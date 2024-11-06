@@ -12,10 +12,20 @@ class OverallController < ApplicationController
   end  
   
   def disp_youngest
+    @youngest_director = Director.where.not({ :dob => nil }).order({ :dob => :asc }).last
+    @formatted_dob = @youngest_director.dob.strftime("%B %d, %Y")
     
-  render({ :template => "misc_templates/youngest"})
+    render({ :template => "misc_templates/youngest"})
   end
   
+  def disp_oldest
+    @oldest_director = Director.where.not({ :dob => nil }).order({ :dob => :asc }).first
+    @formatted_dob = @oldest_director.dob.strftime("%B %d, %Y")
+    
+    render({ :template => "misc_templates/oldest"})
+  end
+  
+
   def disp_directors_bio
     @dir_id = params.fetch("dir_id").to_i
     render({ :template => "misc_templates/directors_bio_page"})

@@ -11,6 +11,11 @@ class OverallController < ApplicationController
     render({ :template => "misc_templates/actors_page"})
   end  
   
+  def disp_youngest
+    
+  render({ :template => "misc_templates/youngest"})
+  end
+  
   def disp_directors_bio
     @dir_id = params.fetch("dir_id").to_i
     render({ :template => "misc_templates/directors_bio_page"})
@@ -26,4 +31,5 @@ class OverallController < ApplicationController
     render({ :template => "misc_templates/actors_bio_page"})
   end
 
+ 
 end

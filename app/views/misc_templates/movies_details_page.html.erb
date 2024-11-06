@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: MSM Queries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+    
+    <h1>
+  Movie #<%= @mov_id %> details
+</h1>
+
+<a href="/movies">
+  Go back
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Title
+  </dt>
+  <dd>
+    <%= Movie.find(@mov_id).title %>
+  </dd>
+
+  <dt>
+    Year
+  </dt>
+  <dd>
+    <%= Movie.find(@mov_id).year %>
+  </dd>
+
+  <dt>
+    Duration
+  </dt>
+  <dd>
+    <%= Movie.find(@mov_id).duration %>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+  <%= Movie.find(@mov_id).description %>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src=<%= Movie.find(@mov_id).image %> style="width:250px;">
+  </dd>
+
+  <dt>
+    Director
+  </dt>
+  <dd>  
+    <%= Director.find(Movie.find(@mov_id).director_id).name %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= Movie.find(@mov_id).created_at %>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= Movie.find(@mov_id).updated_at %>
+  </dd>
+</dl>
+
+<hr>
+
+  </body>
+</html>

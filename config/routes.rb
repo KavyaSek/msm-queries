@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get("/actors", { :controller => "actors", :action => "disp_actors" })
   get("/movies", { :controller => "movies", :action => "disp_movies" })
   get("/directors/:dir_id", { :controller => "directors_bio", :action => "disp_directors_bio" })
+  get("/movies/:mov_id", { :controller => "movies_details", :action => "disp_movies_details" })
+
 
 end
